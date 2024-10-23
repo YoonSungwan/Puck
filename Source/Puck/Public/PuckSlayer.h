@@ -64,7 +64,18 @@ public:
 	// Player Status Component
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ActorComponent")
 	class UPlayerStatusComponent* PlayerStatusComponent;
+	
+	// Player Baic InputAction Component
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ActorComponent")
+	class UPlayerBasicInputActorComponent* PlayerInputActionComp;
 
+	// Player Gun Component
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ActorComponent")
+	TArray<class UBaseGunActorComp*> GunActorCompsArray;
+
+	// Player Hook Component
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "ActorComponent")
+	class UHookActorComponent* HookActorComp;
 
 	UPROPERTY(EditAnywhere, Category = "Fire")
 	TSubclassOf<class APBullet> Magazine;

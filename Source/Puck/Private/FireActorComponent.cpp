@@ -30,7 +30,7 @@ UFireActorComponent::UFireActorComponent()
 
 	if (ParticleAsset.Succeeded())
 	{
-		particleEffect = ParticleAsset.Object; // ��ƼŬ ����Ʈ�� ������ �Ҵ�
+		particleEffect = ParticleAsset.Object;
 	}
 }
 
@@ -60,6 +60,8 @@ void UFireActorComponent::BeginPlay()
 			}
 		}
 	}
+	
+	
 }
 
 // Called every frame

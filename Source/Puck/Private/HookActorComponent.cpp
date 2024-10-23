@@ -37,3 +37,7 @@ void UHookActorComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	// ...
 }
 
+void UHookActorComponent::CreateHookLine()
+{
+
+}
