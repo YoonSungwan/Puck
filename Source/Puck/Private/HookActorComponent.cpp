@@ -13,9 +13,10 @@ UHookActorComponent::UHookActorComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 
 	// ...
-	//HookMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Static"));
+	//HookMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("HookStaticActor"));
 
-	//HookArrowComp = CreateDefaultSubobject<UArrowComponent>(TEXT(""));
+	HookArrowComp = CreateDefaultSubobject<UArrowComponent>(TEXT("HookArrowActor222"));
+	
 }
 
 
@@ -25,7 +26,38 @@ void UHookActorComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
-	
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("print")), false);
+	/*
+	if (GetOwner())
+	{
+
+		UStaticMeshComponent* TargetMesh = nullptr;
+		TArray<UStaticMeshComponent*> MeshComponents;
+		GetOwner()->GetComponents<UStaticMeshComponent>(MeshComponents);
+
+		for (UStaticMeshComponent* MeshComponent : MeshComponents)
+		{
+			if (MeshComponent && MeshComponent->GetName() == FName("CubeStatic"))
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Find Success"));
+				TargetMesh = MeshComponent;
+				break;
+			}
+		}
+
+		if (TargetMesh != nullptr)
+		{
+			UArrowComponent* testComp = NewObject<UArrowComponent>(GetOwner(), UArrowComponent::StaticClass(), FName("testcomponent"));
+			if (HookArrowComp)
+			{
+				//HookArrowComp->RegisterComponent();
+				HookArrowComp->AttachToComponent(TargetMesh, FAttachmentTransformRules::KeepRelativeTransform);
+
+				HookArrowComp->SetRelativeLocation(FVector(10.f));
+				UE_LOG(LogTemp, Warning, TEXT("Attach Success"));
+			}
+		}
+	}*/
 }
 
 

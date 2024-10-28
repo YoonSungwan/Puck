@@ -8,7 +8,7 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHookActorChanged, AActor*, actor);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class PUCK_API UHookActorComponent : public USceneComponent
+class PUCK_API UHookActorComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
@@ -16,7 +16,10 @@ public:
 	// Sets default values for this component's properties
 	UHookActorComponent();
 	
-	class UStaticMeshComponent* HookMesh;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	//class UStaticMeshComponent* HookMesh;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class UArrowComponent* HookArrowComp;
 
 protected:

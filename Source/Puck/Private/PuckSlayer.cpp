@@ -15,6 +15,7 @@
 #include "GameFramework/Actor.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "FireActorComponent.h"
+#include "HookActorComponent.h"
 #include "Puck/ActorComponents/PlayerStatusComponent.h"
 #include "Puck/Widgets/HUDUserWidget.h"
 #include "Sound/SoundBase.h"
@@ -50,7 +51,8 @@ APuckSlayer::APuckSlayer()
 
 	// Player Status Component
 	PlayerStatusComponent = CreateDefaultSubobject<UPlayerStatusComponent>(TEXT("PlayerStatusComponent"));
-	
+
+	HookActorComp = CreateDefaultSubobject<UHookActorComponent>(TEXT("HookComponent"));
 }
 
 // Called when the game starts or when spawned

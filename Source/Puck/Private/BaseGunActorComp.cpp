@@ -53,6 +53,7 @@ void UBaseGunActorComp::TickComponent(float DeltaTime, ELevelTick TickType, FAct
 
 void UBaseGunActorComp::InitOption()
 {
+	//UE_LOG(LogTemp, Warning, )
 }
 
 //사격
