@@ -8,6 +8,7 @@
 
 void UShotGunDataAsset::ShotGunFire()
 {
+	UE_LOG(LogTemp, Warning, TEXT("ShotgunFire Start..."));
 	FVector _startLoc = FireArrow->GetComponentLocation();
 	FVector _endLoc = _startLoc + FireArrow->GetForwardVector() * Range;
 	for(int i=0; i < BulletNum; i++)

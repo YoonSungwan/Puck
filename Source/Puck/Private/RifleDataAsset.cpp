@@ -10,6 +10,7 @@
 
 void URifleDataAsset::RifleFire()
 {
+	UE_LOG(LogTemp, Warning, TEXT("RifleFire Start..."));
 	FVector _startLoc = FireArrow->GetComponentLocation();
 	FVector _endLoc = _startLoc + FireArrow->GetForwardVector() * Range;
 

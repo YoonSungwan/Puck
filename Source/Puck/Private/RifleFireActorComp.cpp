@@ -14,14 +14,13 @@ URifleFireActorComp::URifleFireActorComp()
 	CurrentMagazine = MaxMagazine;
 }
 
-void URifleFireActorComp::InitOption()
-{
-	Super::InitOption();
-}
 
 void URifleFireActorComp::Fire()
 {
 	Super::Fire();
+
+	FVector _startLoc;
+	FVector _endLoc;
 
 	if(!ownerPlayer)
 	{
@@ -41,8 +40,8 @@ void URifleFireActorComp::Fire()
 	_endLoc.X += pitchRandom;
 	_endLoc.Z += yawRandom;
 	
-	playerController->AddYawInput(yawRandom);
-	playerController->AddPitchInput(pitchRandom);
+	//playerController->AddYawInput(yawRandom);
+	//playerController->AddPitchInput(pitchRandom);
 		
 	GetWorld()->GetFirstPlayerController()->PlayerCameraManager->StartCameraShake(UCS_RifleRecoil::StaticClass());
 

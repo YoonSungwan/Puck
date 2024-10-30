@@ -17,8 +17,6 @@ class PUCK_API URifleFireActorComp : public UBaseGunActorComp
 public:
 	URifleFireActorComp();
 	
-	void InitOption() override;
-	
 	void Fire() override;
 
 	void EndFire() override;

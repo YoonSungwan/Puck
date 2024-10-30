@@ -2,6 +2,8 @@
 
 
 #include "PuckSlayer.h"
+
+#include "BaseGunActorComp.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "EnhancedInputSubsystems.h"
@@ -51,6 +53,10 @@ APuckSlayer::APuckSlayer()
 
 	// Player Status Component
 	PlayerStatusComponent = CreateDefaultSubobject<UPlayerStatusComponent>(TEXT("PlayerStatusComponent"));
+
+	//GunActorCompsArray.Add(CreateDefaultSubobject<UBaseGunActorComp>(TEXT("GunActorComponent")));
+	//GunActorCompsArray.Add(CreateDefaultSubobject<URifle>(TEXT("GunActorComponent")));
+	//GunActorCompsArray.Add(CreateDefaultSubobject<UBaseGunActorComp>(TEXT("GunActorComponent")));
 
 	HookActorComp = CreateDefaultSubobject<UHookActorComponent>(TEXT("HookComponent"));
 }

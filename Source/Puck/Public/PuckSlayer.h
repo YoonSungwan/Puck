@@ -7,10 +7,12 @@
 #include "InputActionValue.h"
 #include "EWType.h"
 #include "PuckSlayer.generated.h"
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFireDelegate);
 
 class UPuckWeaponComponent;
 class UInputMappingContext;
 class UInputAction;
+
 UCLASS()
 class PUCK_API APuckSlayer : public ACharacter
 {
@@ -19,6 +21,8 @@ class PUCK_API APuckSlayer : public ACharacter
 public:
 	// Sets default values for this character's properties
 	APuckSlayer();
+	
+	FOnFireDelegate OnFireDelegate;
 
 protected:
 	// Called when the game starts or when spawned

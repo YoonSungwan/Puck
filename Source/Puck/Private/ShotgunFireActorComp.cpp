@@ -14,17 +14,13 @@ UShotgunFireActorComp::UShotgunFireActorComp()
 	CurrentMagazine = MaxMagazine;
 }
 
-void UShotgunFireActorComp::InitOption()
-{
-	Super::InitOption();
-	
-}
-
-
 void UShotgunFireActorComp::Fire()
 {
 	Super::Fire();
 
+	FVector _startLoc;
+	FVector _endLoc;
+	
 	for(int i=0; i < BulletNum; i++)
 	{
 		FHitResult _hitRes;

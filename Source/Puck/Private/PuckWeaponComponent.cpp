@@ -5,6 +5,7 @@
 
 #include <filesystem>
 
+#include "BaseGunActorComp.h"
 #include "BFG_Projectile.h"
 #include "PuckSlayer.h"
 
@@ -134,7 +135,10 @@ void UPuckWeaponComponent::Fire()
 		//
 		// UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), MuzzleParticle, SocketLocation, SocketRotation);
 		
-		puckCharac->PlayFireAnim();
+		//puckCharac->PlayFireAnim();
+		UE_LOG(LogTemp, Error, TEXT("Fire is Broadcast"));
+		puckCharac->OnFireDelegate.Broadcast();
+		//->OnFireDelegate;
 	}
 	
 }

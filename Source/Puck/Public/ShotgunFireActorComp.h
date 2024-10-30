@@ -29,7 +29,6 @@ public:
 	float YawCongestion = 200;
 
 public:
-	void InitOption() override;
 	
 	void Fire() override;
 

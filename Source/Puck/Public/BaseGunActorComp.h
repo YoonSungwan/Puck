@@ -8,6 +8,8 @@
 #include "ReloadInterface.h"
 #include "BaseGunActorComp.generated.h"
 
+
+class UDataAsset;
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class PUCK_API UBaseGunActorComp : public UActorComponent, public IFireInterface, public IReloadInterface
 {
@@ -20,7 +22,10 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Effects")
 	UParticleSystem* particleEffect; // 파티클 이펙트 변수
 
-	UParticleSystemComponent* particleComponent;
+	//UParticleSystemComponent* particleComponent;
+
+	UPROPERTY(EditAnywhere, Category = "DataAsset")
+	UDataAsset* WeaponDataAsset;
 
 protected:
 	// Called when the game starts
@@ -41,11 +46,11 @@ protected:
 	UPROPERTY(EditAnywhere, Category="bullet option")
 	int CurrentMagazine;
 
-	APlayerController* playerController;
+	//APlayerController* playerController;
 	class APuckSlayer* ownerPlayer;
 
-	FVector _startLoc;
-	FVector _endLoc;
+	//FVector _startLoc;
+	//FVector _endLoc;
 	
 private:
 
@@ -53,8 +58,7 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	virtual void InitOption();
-
+	UFUNCTION()
 	virtual void Fire() override;
 	virtual void Reload() override;
 
